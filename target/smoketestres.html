@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.0.1","implementation":{"name":"cucumber-jvm","version":"6.7.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.144-b01"},"os":{"name":"Windows 7"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1604158372","nanos":563000000}}},{"source":{"uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature1.feature","data":"Feature: arithmetic calculation\n\n  @smoketest\n  Scenario: validate arithmetic operation for given data\n    Given launch app\n    Then validate operation with given data\n      | operation | input1 | input2 |\n      | add       |     23 |     34 |\n      | subtract  |     23 |     14 |\n      | multiply  |     23 |     34 |\n      | divide    |     21 |      8 |\n    And close app\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature1.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"arithmetic calculation","children":[{"scenario":{"location":{"line":4,"column":3},"tags":[{"location":{"line":3,"column":3},"name":"@smoketest","id":"bde335db-f2e9-4926-991e-aaaa859e895a"}],"keyword":"Scenario","name":"validate arithmetic operation for given data","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"launch app","id":"dcbd0940-dada-4f54-a84f-5a9957e735bc"},{"location":{"line":6,"column":5},"keyword":"Then ","text":"validate operation with given data","dataTable":{"location":{"line":7,"column":7},"rows":[{"location":{"line":7,"column":7},"cells":[{"location":{"line":7,"column":9},"value":"operation"},{"location":{"line":7,"column":21},"value":"input1"},{"location":{"line":7,"column":30},"value":"input2"}],"id":"f77a59b4-793c-4f73-95c6-892fb5f88038"},{"location":{"line":8,"column":7},"cells":[{"location":{"line":8,"column":9},"value":"add"},{"location":{"line":8,"column":25},"value":"23"},{"location":{"line":8,"column":34},"value":"34"}],"id":"437efb91-6435-4efd-a257-c7df8d1e26f8"},{"location":{"line":9,"column":7},"cells":[{"location":{"line":9,"column":9},"value":"subtract"},{"location":{"line":9,"column":25},"value":"23"},{"location":{"line":9,"column":34},"value":"14"}],"id":"0118fc98-0df6-4f68-9df9-a1fa44bcdab1"},{"location":{"line":10,"column":7},"cells":[{"location":{"line":10,"column":9},"value":"multiply"},{"location":{"line":10,"column":25},"value":"23"},{"location":{"line":10,"column":34},"value":"34"}],"id":"58e82801-519d-40d9-a50e-f5d7e641f0db"},{"location":{"line":11,"column":7},"cells":[{"location":{"line":11,"column":9},"value":"divide"},{"location":{"line":11,"column":25},"value":"21"},{"location":{"line":11,"column":35},"value":"8"}],"id":"0a8bde87-62ac-4a34-9014-77c3a0173ad5"}]},"id":"ae1d7da8-2133-4e50-98b1-3bcb45d839c9"},{"location":{"line":12,"column":5},"keyword":"And ","text":"close app","id":"82576da5-0e98-48af-a823-11e1528e8aae"}],"id":"738c9137-d138-45dd-94a0-a6b7b72cba93"}}]}}},{"pickle":{"id":"d62720c3-7f3c-42d6-8408-46dedbe3d3e9","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature1.feature","name":"validate arithmetic operation for given data","language":"en","steps":[{"text":"launch app","id":"ece3e45a-2087-466e-ab24-627a3bd27d8b","astNodeIds":["dcbd0940-dada-4f54-a84f-5a9957e735bc"]},{"text":"validate operation with given data","argument":{"dataTable":{"rows":[{"cells":[{"value":"operation"},{"value":"input1"},{"value":"input2"}]},{"cells":[{"value":"add"},{"value":"23"},{"value":"34"}]},{"cells":[{"value":"subtract"},{"value":"23"},{"value":"14"}]},{"cells":[{"value":"multiply"},{"value":"23"},{"value":"34"}]},{"cells":[{"value":"divide"},{"value":"21"},{"value":"8"}]}]}},"id":"038a4d63-c387-445b-889d-71438f844447","astNodeIds":["ae1d7da8-2133-4e50-98b1-3bcb45d839c9"]},{"text":"close app","id":"66be4e18-b57d-44f2-8a0e-5221c3edcb3d","astNodeIds":["82576da5-0e98-48af-a823-11e1528e8aae"]}],"tags":[{"name":"@smoketest","astNodeId":"bde335db-f2e9-4926-991e-aaaa859e895a"}],"astNodeIds":["738c9137-d138-45dd-94a0-a6b7b72cba93"]}},{"source":{"uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature2.feature","data":"Feature: arithmetic calculation\n\n  Scenario: validate arithmetic operation for given data\n    Given launch app\n    Then validate operation with data in excel file\n    And close app\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature2.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"arithmetic calculation","children":[{"scenario":{"location":{"line":3,"column":3},"keyword":"Scenario","name":"validate arithmetic operation for given data","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"launch app","id":"702ca852-86cd-455d-bc99-3803cbeddb8c"},{"location":{"line":5,"column":5},"keyword":"Then ","text":"validate operation with data in excel file","id":"2cb8bfa6-1f2c-453a-9ce3-102dd63a84aa"},{"location":{"line":6,"column":5},"keyword":"And ","text":"close app","id":"47877a3f-6b98-4180-b430-200840b4df58"}],"id":"5bea1e1f-82d5-4cc3-a261-384ab5e08c5d"}}]}}},{"pickle":{"id":"fd0d29fb-f47a-4f60-84d3-ffd4466489b2","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature2.feature","name":"validate arithmetic operation for given data","language":"en","steps":[{"text":"launch app","id":"86a0dd03-2c74-494d-9bb5-38acb3606181","astNodeIds":["702ca852-86cd-455d-bc99-3803cbeddb8c"]},{"text":"validate operation with data in excel file","id":"cbe8c107-9d13-4eda-8942-fb8e3c554c6b","astNodeIds":["2cb8bfa6-1f2c-453a-9ce3-102dd63a84aa"]},{"text":"close app","id":"dbc20bd6-b176-4f95-b6b5-b662fb34deeb","astNodeIds":["47877a3f-6b98-4180-b430-200840b4df58"]}],"astNodeIds":["5bea1e1f-82d5-4cc3-a261-384ab5e08c5d"]}},{"source":{"uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","data":"Feature: Arithmetic operations\n\n  Background: \n    Given launch app\n\n  Scenario Outline: validate addition operation\n    Then validate addition using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"\n    And close app\n\n    Examples: \n      | input1 | input2 |\n      |     23 |     56 |\n      |    -78 |     79 |\n      |     98 |    -87 |\n      |    -34 |    -45 |\n      |      0 |     34 |\n      |     34 |      0 |\n      |      0 |      0 |\n\n  Scenario Outline: validate subtraction operation\n    Then validate subtraction using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"\n    And close app\n\n    Examples: \n      | input1 | input2 |\n      |     23 |     56 |\n      |    -78 |     79 |\n      |     98 |    -87 |\n      |    -34 |    -45 |\n      |      0 |     34 |\n      |     34 |      0 |\n      |      0 |      0 |\n\n  Scenario Outline: validate multiply operation\n    Then validate multiply using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"\n    And close app\n\n    Examples: \n      | input1 | input2 |\n      |     23 |     56 |\n      |    -78 |     79 |\n      |     98 |    -87 |\n      |    -34 |    -45 |\n      |      0 |     34 |\n      |     34 |      0 |\n      |      0 |      0 |\n\n  @smoketest\n  Scenario Outline: validate division operation\n    Then validate division using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"\n    And close app\n\n    Examples: \n      | input1 | input2 |\n      |     23 |     56 |\n      |    -78 |     79 |\n      |     98 |    -87 |\n      |    -34 |    -45 |\n      |      0 |     34 |\n      |     34 |      0 |\n      |      0 |      0 |\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Arithmetic operations","children":[{"background":{"location":{"line":3,"column":3},"keyword":"Background","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"launch app","id":"e5d8044d-2eae-4ddd-aa82-f4f4f7068422"}],"id":"65b92b47-6339-440b-ad1e-17a99d0f1bab"}},{"scenario":{"location":{"line":6,"column":3},"keyword":"Scenario Outline","name":"validate addition operation","steps":[{"location":{"line":7,"column":5},"keyword":"Then ","text":"validate addition using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"","id":"73555ad2-3e8b-4cee-9256-c0e8fee2f635"},{"location":{"line":8,"column":5},"keyword":"And ","text":"close app","id":"cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18"}],"examples":[{"location":{"line":10,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":11,"column":7},"cells":[{"location":{"line":11,"column":9},"value":"input1"},{"location":{"line":11,"column":18},"value":"input2"}],"id":"9f887b43-696b-47de-a181-8d1da15e8acb"},"tableBody":[{"location":{"line":12,"column":7},"cells":[{"location":{"line":12,"column":13},"value":"23"},{"location":{"line":12,"column":22},"value":"56"}],"id":"06a2a4c3-7e99-448c-82ba-713958603988"},{"location":{"line":13,"column":7},"cells":[{"location":{"line":13,"column":12},"value":"-78"},{"location":{"line":13,"column":22},"value":"79"}],"id":"bb34988a-6166-4d0d-9641-4cbf85084c30"},{"location":{"line":14,"column":7},"cells":[{"location":{"line":14,"column":13},"value":"98"},{"location":{"line":14,"column":21},"value":"-87"}],"id":"302ef969-61cb-412d-951c-7f9220bebb06"},{"location":{"line":15,"column":7},"cells":[{"location":{"line":15,"column":12},"value":"-34"},{"location":{"line":15,"column":21},"value":"-45"}],"id":"56bc1278-b4ce-4e81-a3b9-df5241a0ec5b"},{"location":{"line":16,"column":7},"cells":[{"location":{"line":16,"column":14},"value":"0"},{"location":{"line":16,"column":22},"value":"34"}],"id":"32be62a2-513d-47fb-95ed-520357c40748"},{"location":{"line":17,"column":7},"cells":[{"location":{"line":17,"column":13},"value":"34"},{"location":{"line":17,"column":23},"value":"0"}],"id":"cbca653c-fef5-4eba-81a6-c7a656c0e59a"},{"location":{"line":18,"column":7},"cells":[{"location":{"line":18,"column":14},"value":"0"},{"location":{"line":18,"column":23},"value":"0"}],"id":"fee0c447-eda1-40a3-8b38-71ba26044926"}],"id":"984a72df-a201-44ac-b003-e01148db28a6"}],"id":"8cf84b42-5d38-4700-ae37-7f17adde8bab"}},{"scenario":{"location":{"line":20,"column":3},"keyword":"Scenario Outline","name":"validate subtraction operation","steps":[{"location":{"line":21,"column":5},"keyword":"Then ","text":"validate subtraction using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"","id":"46acf672-0728-4639-9417-89353727519b"},{"location":{"line":22,"column":5},"keyword":"And ","text":"close app","id":"369d40c8-edc7-42c0-863c-da15f23ae6f9"}],"examples":[{"location":{"line":24,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":25,"column":7},"cells":[{"location":{"line":25,"column":9},"value":"input1"},{"location":{"line":25,"column":18},"value":"input2"}],"id":"16c985c3-b641-4b5e-956e-4b35fabfe6ed"},"tableBody":[{"location":{"line":26,"column":7},"cells":[{"location":{"line":26,"column":13},"value":"23"},{"location":{"line":26,"column":22},"value":"56"}],"id":"e7a03509-2c68-4a2e-a288-6876b0b2936f"},{"location":{"line":27,"column":7},"cells":[{"location":{"line":27,"column":12},"value":"-78"},{"location":{"line":27,"column":22},"value":"79"}],"id":"786d67c1-0803-4c7e-a609-459382eba0dc"},{"location":{"line":28,"column":7},"cells":[{"location":{"line":28,"column":13},"value":"98"},{"location":{"line":28,"column":21},"value":"-87"}],"id":"4c25293e-137d-4a43-93ea-875a135b9fa5"},{"location":{"line":29,"column":7},"cells":[{"location":{"line":29,"column":12},"value":"-34"},{"location":{"line":29,"column":21},"value":"-45"}],"id":"992fbdde-7d90-4b50-b828-fa6e53ba1e78"},{"location":{"line":30,"column":7},"cells":[{"location":{"line":30,"column":14},"value":"0"},{"location":{"line":30,"column":22},"value":"34"}],"id":"adeb2024-1546-4794-85a5-127942ce458a"},{"location":{"line":31,"column":7},"cells":[{"location":{"line":31,"column":13},"value":"34"},{"location":{"line":31,"column":23},"value":"0"}],"id":"b475e0c5-ff79-4c6f-ba92-b4027d5e00e0"},{"location":{"line":32,"column":7},"cells":[{"location":{"line":32,"column":14},"value":"0"},{"location":{"line":32,"column":23},"value":"0"}],"id":"dd3c421d-ad68-4521-9945-099a01ce68eb"}],"id":"4e4ec348-e8d4-415a-9845-7847490a23db"}],"id":"4355ba3b-3cae-4994-9d45-5a897a1218c0"}},{"scenario":{"location":{"line":34,"column":3},"keyword":"Scenario Outline","name":"validate multiply operation","steps":[{"location":{"line":35,"column":5},"keyword":"Then ","text":"validate multiply using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"","id":"d8220eac-c215-41fe-ac9c-789698472178"},{"location":{"line":36,"column":5},"keyword":"And ","text":"close app","id":"06b42ad1-7f4a-413a-b24d-455bc0dc483b"}],"examples":[{"location":{"line":38,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":39,"column":7},"cells":[{"location":{"line":39,"column":9},"value":"input1"},{"location":{"line":39,"column":18},"value":"input2"}],"id":"6bed97f0-7d97-4643-a7e3-aa4c202a17a7"},"tableBody":[{"location":{"line":40,"column":7},"cells":[{"location":{"line":40,"column":13},"value":"23"},{"location":{"line":40,"column":22},"value":"56"}],"id":"4be0edb1-4d1b-43f3-b1c3-c7f16fdd82ff"},{"location":{"line":41,"column":7},"cells":[{"location":{"line":41,"column":12},"value":"-78"},{"location":{"line":41,"column":22},"value":"79"}],"id":"7e779baa-bfc4-46e4-bff5-c052c6b5f0fc"},{"location":{"line":42,"column":7},"cells":[{"location":{"line":42,"column":13},"value":"98"},{"location":{"line":42,"column":21},"value":"-87"}],"id":"f23a1c51-ffb2-4426-8d00-94b541609b16"},{"location":{"line":43,"column":7},"cells":[{"location":{"line":43,"column":12},"value":"-34"},{"location":{"line":43,"column":21},"value":"-45"}],"id":"2b93c203-ae00-4358-a690-dfd30db5ab97"},{"location":{"line":44,"column":7},"cells":[{"location":{"line":44,"column":14},"value":"0"},{"location":{"line":44,"column":22},"value":"34"}],"id":"c077c8e3-d379-4c0e-b642-8f4fe7ea3ace"},{"location":{"line":45,"column":7},"cells":[{"location":{"line":45,"column":13},"value":"34"},{"location":{"line":45,"column":23},"value":"0"}],"id":"9b9ae367-2847-4f51-88fc-86bfc0061ebc"},{"location":{"line":46,"column":7},"cells":[{"location":{"line":46,"column":14},"value":"0"},{"location":{"line":46,"column":23},"value":"0"}],"id":"8a1772c2-d57f-445f-8d54-76d0931b3f0f"}],"id":"979015db-eec8-4ec5-bff6-f0f9fc4111ae"}],"id":"d575be91-af60-43eb-92dd-62b96d03f202"}},{"scenario":{"location":{"line":49,"column":3},"tags":[{"location":{"line":48,"column":3},"name":"@smoketest","id":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"keyword":"Scenario Outline","name":"validate division operation","steps":[{"location":{"line":50,"column":5},"keyword":"Then ","text":"validate division using \"\u003cinput1\u003e\" and \"\u003cinput2\u003e\"","id":"07fb6839-2f10-4cc0-bedd-d470056edc7b"},{"location":{"line":51,"column":5},"keyword":"And ","text":"close app","id":"eb5011de-4922-41fc-9736-aaf33d3024d0"}],"examples":[{"location":{"line":53,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":54,"column":7},"cells":[{"location":{"line":54,"column":9},"value":"input1"},{"location":{"line":54,"column":18},"value":"input2"}],"id":"b98c34fa-0fa8-4d0f-9ea1-78a5f163e481"},"tableBody":[{"location":{"line":55,"column":7},"cells":[{"location":{"line":55,"column":13},"value":"23"},{"location":{"line":55,"column":22},"value":"56"}],"id":"8c25c49d-74c0-4d5e-8df3-6eb8cdb376d6"},{"location":{"line":56,"column":7},"cells":[{"location":{"line":56,"column":12},"value":"-78"},{"location":{"line":56,"column":22},"value":"79"}],"id":"7da608d5-a2dc-4362-bb36-405f387a1c59"},{"location":{"line":57,"column":7},"cells":[{"location":{"line":57,"column":13},"value":"98"},{"location":{"line":57,"column":21},"value":"-87"}],"id":"006cd19a-852d-4d27-8549-224b7490cc0e"},{"location":{"line":58,"column":7},"cells":[{"location":{"line":58,"column":12},"value":"-34"},{"location":{"line":58,"column":21},"value":"-45"}],"id":"17292fbb-29db-4d65-ae13-241fb8880308"},{"location":{"line":59,"column":7},"cells":[{"location":{"line":59,"column":14},"value":"0"},{"location":{"line":59,"column":22},"value":"34"}],"id":"cac0848a-b4b3-4daf-a925-29d8051ff7ff"},{"location":{"line":60,"column":7},"cells":[{"location":{"line":60,"column":13},"value":"34"},{"location":{"line":60,"column":23},"value":"0"}],"id":"5cc6984e-1ac1-435f-ba05-88d548b58862"},{"location":{"line":61,"column":7},"cells":[{"location":{"line":61,"column":14},"value":"0"},{"location":{"line":61,"column":23},"value":"0"}],"id":"ede72412-4b8d-4ba6-9485-2a5ff27b4e32"}],"id":"5815c9dc-a6b2-473d-aaf8-0ff0373b146d"}],"id":"fc1d1465-88e6-4a4d-974e-7b4b346d3038"}}]}}},{"pickle":{"id":"71ee2cb2-8f49-461d-89f9-d569a6aabaf7","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"c9991a68-4307-4c1e-9f52-bca440c61100","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"23\" and \"56\"","id":"f727b726-9911-4f8e-84c1-9aa9911cf51c","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","06a2a4c3-7e99-448c-82ba-713958603988"]},{"text":"close app","id":"f14943f2-f5cb-4de8-8e89-dab027ea3f72","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","06a2a4c3-7e99-448c-82ba-713958603988"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","06a2a4c3-7e99-448c-82ba-713958603988"]}},{"pickle":{"id":"2f624f7f-e452-48ae-b783-5a7a7616f488","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"ca69a175-08e7-4d85-a63f-e29020c70c4c","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"-78\" and \"79\"","id":"f5719fae-7cb0-4307-8b3b-58472f0c1a67","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","bb34988a-6166-4d0d-9641-4cbf85084c30"]},{"text":"close app","id":"6c31234f-cc21-43db-87f1-dffe9a76c905","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","bb34988a-6166-4d0d-9641-4cbf85084c30"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","bb34988a-6166-4d0d-9641-4cbf85084c30"]}},{"pickle":{"id":"6ea2807d-281e-44e1-8b52-e30777eb8894","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"02553792-b012-42cd-bc5a-e3b988a3481b","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"98\" and \"-87\"","id":"02cc8755-b6a6-4691-bd69-9e6035fa5341","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","302ef969-61cb-412d-951c-7f9220bebb06"]},{"text":"close app","id":"2360cccb-bba3-4062-9f99-35be302078a6","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","302ef969-61cb-412d-951c-7f9220bebb06"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","302ef969-61cb-412d-951c-7f9220bebb06"]}},{"pickle":{"id":"1644ffd6-e40e-4a7c-ba4d-7004fcd0f05a","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"bc1ab5d1-9b44-4a47-9e56-d734b9a3654b","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"-34\" and \"-45\"","id":"e8fbd446-5a5b-4d72-8ae3-b07194d698d1","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","56bc1278-b4ce-4e81-a3b9-df5241a0ec5b"]},{"text":"close app","id":"02916401-afd4-40a1-b385-c4ac24c165c5","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","56bc1278-b4ce-4e81-a3b9-df5241a0ec5b"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","56bc1278-b4ce-4e81-a3b9-df5241a0ec5b"]}},{"pickle":{"id":"53081907-f68c-4e6b-a25b-966be99497e4","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"3a043215-1326-42cc-bb83-3ef08991311c","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"0\" and \"34\"","id":"df707bc6-d3d6-4eb5-a176-62a5ee0daa98","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","32be62a2-513d-47fb-95ed-520357c40748"]},{"text":"close app","id":"25116127-0b85-4690-a4a0-7efec2159228","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","32be62a2-513d-47fb-95ed-520357c40748"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","32be62a2-513d-47fb-95ed-520357c40748"]}},{"pickle":{"id":"95a6880a-6b0b-417c-8595-990fd757fdda","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"338e3469-816c-4017-88ed-cc2f9ba517f5","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"34\" and \"0\"","id":"fbadc828-959d-4b4d-95fc-9db8accabd14","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","cbca653c-fef5-4eba-81a6-c7a656c0e59a"]},{"text":"close app","id":"96d306f7-8ef9-4cb6-a640-967ab113d949","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","cbca653c-fef5-4eba-81a6-c7a656c0e59a"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","cbca653c-fef5-4eba-81a6-c7a656c0e59a"]}},{"pickle":{"id":"0f647b31-afac-4ab0-82e1-d138963580eb","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate addition operation","language":"en","steps":[{"text":"launch app","id":"9cef02fa-f33d-4308-b8b2-8beeb89991ee","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate addition using \"0\" and \"0\"","id":"14e5b9b7-7ffd-4be8-a40d-c1925cea1d3f","astNodeIds":["73555ad2-3e8b-4cee-9256-c0e8fee2f635","fee0c447-eda1-40a3-8b38-71ba26044926"]},{"text":"close app","id":"2cba1d6c-5973-490a-95af-46345ab54129","astNodeIds":["cd7c37aa-4f9c-42fa-8762-0f2dc92d3e18","fee0c447-eda1-40a3-8b38-71ba26044926"]}],"astNodeIds":["8cf84b42-5d38-4700-ae37-7f17adde8bab","fee0c447-eda1-40a3-8b38-71ba26044926"]}},{"pickle":{"id":"fcd405e8-69be-457a-8aea-6c8fbb62dcb7","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"be130f6b-360d-4f67-a809-8e39c1c5fd0f","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"23\" and \"56\"","id":"28ea2180-7c1e-4735-a83b-7a19601bd4ec","astNodeIds":["46acf672-0728-4639-9417-89353727519b","e7a03509-2c68-4a2e-a288-6876b0b2936f"]},{"text":"close app","id":"e9feaf9c-6915-40c4-a0b1-b943ddd3f734","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","e7a03509-2c68-4a2e-a288-6876b0b2936f"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","e7a03509-2c68-4a2e-a288-6876b0b2936f"]}},{"pickle":{"id":"095e7f13-e2a5-49b4-8350-4325104f63fd","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"d42eb5e4-837d-4669-823c-d232fd8e34de","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"-78\" and \"79\"","id":"5fa3e8dd-d935-40c5-a8f3-d26ed319b314","astNodeIds":["46acf672-0728-4639-9417-89353727519b","786d67c1-0803-4c7e-a609-459382eba0dc"]},{"text":"close app","id":"3a4fd36a-2ead-4658-a7d6-2d2e0c146a33","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","786d67c1-0803-4c7e-a609-459382eba0dc"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","786d67c1-0803-4c7e-a609-459382eba0dc"]}},{"pickle":{"id":"f9f67a0d-3499-47eb-9d27-42295196c570","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"6c0c9f40-e394-47de-b3df-b50d996fdd60","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"98\" and \"-87\"","id":"fb1e7582-eb43-49b7-a762-fdbfe83bb92a","astNodeIds":["46acf672-0728-4639-9417-89353727519b","4c25293e-137d-4a43-93ea-875a135b9fa5"]},{"text":"close app","id":"08a311bd-6284-4c74-904c-96d5dfa5f288","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","4c25293e-137d-4a43-93ea-875a135b9fa5"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","4c25293e-137d-4a43-93ea-875a135b9fa5"]}},{"pickle":{"id":"f3b17172-197f-4fe2-86a1-c86307903403","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"63cb565d-c269-4ee3-9c67-1034cc6662f1","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"-34\" and \"-45\"","id":"865c8645-4d63-487a-ae13-98bfb59ab353","astNodeIds":["46acf672-0728-4639-9417-89353727519b","992fbdde-7d90-4b50-b828-fa6e53ba1e78"]},{"text":"close app","id":"15e25269-53de-41c7-86f8-07167539975e","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","992fbdde-7d90-4b50-b828-fa6e53ba1e78"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","992fbdde-7d90-4b50-b828-fa6e53ba1e78"]}},{"pickle":{"id":"f55a3629-37bb-4069-b1cb-b6a52f8a23b0","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"b3cc9f35-b6c3-49ea-b156-fd954844966c","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"0\" and \"34\"","id":"afeaf6d3-b906-4143-afdf-63800ccbfc9c","astNodeIds":["46acf672-0728-4639-9417-89353727519b","adeb2024-1546-4794-85a5-127942ce458a"]},{"text":"close app","id":"35b1db41-bafa-4cf6-a614-7a48835b6dfa","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","adeb2024-1546-4794-85a5-127942ce458a"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","adeb2024-1546-4794-85a5-127942ce458a"]}},{"pickle":{"id":"27093433-3038-43c0-be4a-45329c1349f8","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"92c92705-4441-44d7-8138-e13addc26feb","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"34\" and \"0\"","id":"bf5427c3-e936-4e74-93bf-8a24cbf803fc","astNodeIds":["46acf672-0728-4639-9417-89353727519b","b475e0c5-ff79-4c6f-ba92-b4027d5e00e0"]},{"text":"close app","id":"bcd58aee-02c3-475d-83c3-f7ade43fa765","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","b475e0c5-ff79-4c6f-ba92-b4027d5e00e0"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","b475e0c5-ff79-4c6f-ba92-b4027d5e00e0"]}},{"pickle":{"id":"9d5f8e95-f534-4db1-84ce-c396f41eb7e5","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate subtraction operation","language":"en","steps":[{"text":"launch app","id":"95c21dca-0576-4545-951c-36508ec10605","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate subtraction using \"0\" and \"0\"","id":"80ba6d5d-7c8c-4a25-9cbf-cfacf45a56da","astNodeIds":["46acf672-0728-4639-9417-89353727519b","dd3c421d-ad68-4521-9945-099a01ce68eb"]},{"text":"close app","id":"9be7e133-2794-451a-8af6-0662303fef76","astNodeIds":["369d40c8-edc7-42c0-863c-da15f23ae6f9","dd3c421d-ad68-4521-9945-099a01ce68eb"]}],"astNodeIds":["4355ba3b-3cae-4994-9d45-5a897a1218c0","dd3c421d-ad68-4521-9945-099a01ce68eb"]}},{"pickle":{"id":"fbc9dd6f-ceab-4ea1-a536-23f818608422","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"1f20c790-8f59-4350-b762-33703af6fe8f","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"23\" and \"56\"","id":"08a75f9e-ad2f-4388-853d-d6d6505d2e40","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","4be0edb1-4d1b-43f3-b1c3-c7f16fdd82ff"]},{"text":"close app","id":"0b2e12e9-8480-46b9-aec2-f5c20b743b77","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","4be0edb1-4d1b-43f3-b1c3-c7f16fdd82ff"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","4be0edb1-4d1b-43f3-b1c3-c7f16fdd82ff"]}},{"pickle":{"id":"2bebb93a-b78b-4489-bf0e-9f0b7763903d","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"ac1f0129-2bec-45ee-b511-861c3cc0b23b","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"-78\" and \"79\"","id":"80f3de1b-ec86-47d9-9c1a-b9179f965a1e","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","7e779baa-bfc4-46e4-bff5-c052c6b5f0fc"]},{"text":"close app","id":"b98577b1-e90f-449e-92ba-0eb25555fabb","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","7e779baa-bfc4-46e4-bff5-c052c6b5f0fc"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","7e779baa-bfc4-46e4-bff5-c052c6b5f0fc"]}},{"pickle":{"id":"ee43949b-ae97-45fb-a2ad-a9eede596e96","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"4609f3b0-c7fd-4433-ac59-7fd595108e76","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"98\" and \"-87\"","id":"4604c29c-0397-4582-9ea6-2ec7001b9a0b","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","f23a1c51-ffb2-4426-8d00-94b541609b16"]},{"text":"close app","id":"e65a4075-0c27-4d83-aa92-bdf428db90dd","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","f23a1c51-ffb2-4426-8d00-94b541609b16"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","f23a1c51-ffb2-4426-8d00-94b541609b16"]}},{"pickle":{"id":"def986f7-8714-489e-8950-3cdc75fc8fbb","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"5e27aeee-6923-42ff-accc-87c7d923bfa3","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"-34\" and \"-45\"","id":"45067c2d-a80e-4d5e-9f95-0ec80de3151d","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","2b93c203-ae00-4358-a690-dfd30db5ab97"]},{"text":"close app","id":"4b1aa402-5ea0-422c-a043-79f6c3b99b90","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","2b93c203-ae00-4358-a690-dfd30db5ab97"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","2b93c203-ae00-4358-a690-dfd30db5ab97"]}},{"pickle":{"id":"376b21a5-1707-464e-b340-bdaf8338bef2","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"d887c7fa-d199-4f40-aeb7-cea7f0e35959","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"0\" and \"34\"","id":"00bf6ecc-de0e-4165-b1d6-c018c5df7586","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","c077c8e3-d379-4c0e-b642-8f4fe7ea3ace"]},{"text":"close app","id":"3ad483ec-a8d5-43b9-9fd9-770bd1fd7bf3","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","c077c8e3-d379-4c0e-b642-8f4fe7ea3ace"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","c077c8e3-d379-4c0e-b642-8f4fe7ea3ace"]}},{"pickle":{"id":"b92600ea-cb65-4599-9f1f-fb6e33d7f84d","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"38d5b910-eefe-4dd7-837c-fca58956e02f","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"34\" and \"0\"","id":"a46e849c-7d3f-4d06-a479-a237622fb7d0","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","9b9ae367-2847-4f51-88fc-86bfc0061ebc"]},{"text":"close app","id":"bd6b5b1d-721e-4ebd-a6ee-3947143ebc35","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","9b9ae367-2847-4f51-88fc-86bfc0061ebc"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","9b9ae367-2847-4f51-88fc-86bfc0061ebc"]}},{"pickle":{"id":"3ea6f64a-e0bf-464e-8456-24050f958d0f","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate multiply operation","language":"en","steps":[{"text":"launch app","id":"4aa7684a-3ca5-4346-87ca-3788e07946a8","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate multiply using \"0\" and \"0\"","id":"d840aedc-d66e-499e-b72c-ef1d60fe4d56","astNodeIds":["d8220eac-c215-41fe-ac9c-789698472178","8a1772c2-d57f-445f-8d54-76d0931b3f0f"]},{"text":"close app","id":"49be5187-4149-4125-9f55-8ebdbc361855","astNodeIds":["06b42ad1-7f4a-413a-b24d-455bc0dc483b","8a1772c2-d57f-445f-8d54-76d0931b3f0f"]}],"astNodeIds":["d575be91-af60-43eb-92dd-62b96d03f202","8a1772c2-d57f-445f-8d54-76d0931b3f0f"]}},{"pickle":{"id":"ee783629-9d38-48d0-be87-10794e6a8f96","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"ac4bf30b-4315-4d9a-9cf4-26fb02dde3ea","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"23\" and \"56\"","id":"b6d98f3d-9ce0-4010-a95a-9744e1b3e690","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","8c25c49d-74c0-4d5e-8df3-6eb8cdb376d6"]},{"text":"close app","id":"680b45b4-e065-43ea-8fed-ff0857a81b15","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","8c25c49d-74c0-4d5e-8df3-6eb8cdb376d6"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","8c25c49d-74c0-4d5e-8df3-6eb8cdb376d6"]}},{"pickle":{"id":"e930dae6-9a55-4e3a-842a-094428487e01","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"82fc29ce-d049-4996-b543-c57dc4ef7841","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"-78\" and \"79\"","id":"4a153c5e-f3fb-4888-b2bc-fdecb4320679","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","7da608d5-a2dc-4362-bb36-405f387a1c59"]},{"text":"close app","id":"11c7483c-9b31-459a-b0d1-072c1fd70602","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","7da608d5-a2dc-4362-bb36-405f387a1c59"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","7da608d5-a2dc-4362-bb36-405f387a1c59"]}},{"pickle":{"id":"25df778c-1cd0-4e93-9365-4f8036b5cc19","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"f3475142-b756-4d1c-a998-88ffbebf2454","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"98\" and \"-87\"","id":"d5e863b8-9198-498e-811d-6bbb800202de","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","006cd19a-852d-4d27-8549-224b7490cc0e"]},{"text":"close app","id":"a08586e3-2c01-44e2-b08c-0efaf05b9b8d","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","006cd19a-852d-4d27-8549-224b7490cc0e"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","006cd19a-852d-4d27-8549-224b7490cc0e"]}},{"pickle":{"id":"4986fdbd-04c6-4979-b2f6-cf5ba0ddc588","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"72a0eafb-f7be-472c-ab1a-8fd0b1168efc","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"-34\" and \"-45\"","id":"daa04d24-f3f9-456c-a6d5-4e88ee740cde","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","17292fbb-29db-4d65-ae13-241fb8880308"]},{"text":"close app","id":"f44055aa-ff53-47fe-8985-c6d79de378e3","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","17292fbb-29db-4d65-ae13-241fb8880308"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","17292fbb-29db-4d65-ae13-241fb8880308"]}},{"pickle":{"id":"429f05a4-aacc-49d4-9e70-2fde5f290878","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"74b91a22-9934-44ff-82fc-f8f85ffdbeb2","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"0\" and \"34\"","id":"7f861e16-c0d0-43a2-a9e4-a6c3159c9069","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","cac0848a-b4b3-4daf-a925-29d8051ff7ff"]},{"text":"close app","id":"b68e4f09-1bf7-4a22-8c0e-fd18836c8b58","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","cac0848a-b4b3-4daf-a925-29d8051ff7ff"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","cac0848a-b4b3-4daf-a925-29d8051ff7ff"]}},{"pickle":{"id":"db182627-8570-40b2-8559-70566b72bc34","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"1d8c7543-e057-4724-99d3-d1c8763ddc4a","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"34\" and \"0\"","id":"cdf3852c-4864-4a8d-8271-9a3afeac8b27","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","5cc6984e-1ac1-435f-ba05-88d548b58862"]},{"text":"close app","id":"f479f2bc-0199-48e6-a6c9-eee6408e134d","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","5cc6984e-1ac1-435f-ba05-88d548b58862"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","5cc6984e-1ac1-435f-ba05-88d548b58862"]}},{"pickle":{"id":"201babcd-5454-4e2d-bf12-d1a9a248bb16","uri":"file:///E:/batch249/com.magnitia.calcbddtddpico/src/test/resources/features/feature3.feature","name":"validate division operation","language":"en","steps":[{"text":"launch app","id":"2a16ba65-b0d4-4102-95e2-4b66cb3fcdba","astNodeIds":["e5d8044d-2eae-4ddd-aa82-f4f4f7068422"]},{"text":"validate division using \"0\" and \"0\"","id":"d73e0035-28c4-48f0-840f-adf146c95f79","astNodeIds":["07fb6839-2f10-4cc0-bedd-d470056edc7b","ede72412-4b8d-4ba6-9485-2a5ff27b4e32"]},{"text":"close app","id":"a65465b9-624d-42bb-b2fa-9b7c9ff58319","astNodeIds":["eb5011de-4922-41fc-9736-aaf33d3024d0","ede72412-4b8d-4ba6-9485-2a5ff27b4e32"]}],"tags":[{"name":"@smoketest","astNodeId":"f58cc75f-36ac-4d1c-8a4c-05a63cff20d5"}],"astNodeIds":["fc1d1465-88e6-4a4d-974e-7b4b346d3038","ede72412-4b8d-4ba6-9485-2a5ff27b4e32"]}},{"hook":{"id":"c337b7af-cb96-4485-9332-c59217ae6955","sourceReference":{"javaMethod":{"className":"glue.Shared","methodName":"method1","methodParameterTypes":["io.cucumber.java.Scenario"]}}}},{"stepDefinition":{"id":"22316f97-7313-48c2-bdc7-d9c9254b2a6c","pattern":{"source":"^launch app$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode1","methodName":"method2"}}}},{"stepDefinition":{"id":"5a1a3482-9062-461c-83ba-8f94de6cc3ff","pattern":{"source":"^validate operation with given data$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode1","methodName":"method3","methodParameterTypes":["io.cucumber.datatable.DataTable"]}}}},{"stepDefinition":{"id":"d73a920f-875e-4445-b03b-229980e04c56","pattern":{"source":"^close app$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode1","methodName":"method4"}}}},{"stepDefinition":{"id":"e529234f-6eb3-4d2c-b1a7-e91080462d45","pattern":{"source":"^validate operation with data in excel file$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode2","methodName":"method5"}}}},{"stepDefinition":{"id":"026d1325-dfba-4505-b558-17ddc73cab8e","pattern":{"source":"^validate division using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method9","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"79c4c796-78d4-4116-862b-40be0c8470df","pattern":{"source":"^validate subtraction using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method7","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"909fec49-8661-46b8-b54f-a88e7eacaceb","pattern":{"source":"^validate multiply using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method8","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"f8358f43-fb5d-4855-9469-599619582d9c","pattern":{"source":"^validate addition using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method6","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"hook":{"id":"4a2436a3-af05-4e77-8c4a-0306888aa41d","sourceReference":{"javaMethod":{"className":"glue.Shared","methodName":"method2"}}}},{"testCase":{"id":"d3c554f7-4a04-484b-99bf-a28f4684f0b4","pickleId":"d62720c3-7f3c-42d6-8408-46dedbe3d3e9","testSteps":[{"id":"392c6d0e-7e57-43ce-bcb3-ac32c5d44a28","hookId":"c337b7af-cb96-4485-9332-c59217ae6955"},{"id":"814ae260-9c57-4ae3-a95b-4aceb7c5a851","pickleStepId":"ece3e45a-2087-466e-ab24-627a3bd27d8b","stepDefinitionIds":["22316f97-7313-48c2-bdc7-d9c9254b2a6c"],"stepMatchArgumentsLists":[{}]},{"id":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","pickleStepId":"038a4d63-c387-445b-889d-71438f844447","stepDefinitionIds":["5a1a3482-9062-461c-83ba-8f94de6cc3ff"],"stepMatchArgumentsLists":[{}]},{"id":"0c53b3f8-5376-481f-94ad-71d4968903b0","pickleStepId":"66be4e18-b57d-44f2-8a0e-5221c3edcb3d","stepDefinitionIds":["d73a920f-875e-4445-b03b-229980e04c56"],"stepMatchArgumentsLists":[{}]},{"id":"dfc69c68-f34b-4c24-9015-2933bd0522c1","hookId":"4a2436a3-af05-4e77-8c4a-0306888aa41d"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1604158372","nanos":755000000},"testCaseId":"d3c554f7-4a04-484b-99bf-a28f4684f0b4","id":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepStarted":{"timestamp":{"seconds":"1604158372","nanos":758000000},"testStepId":"392c6d0e-7e57-43ce-bcb3-ac32c5d44a28","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":4000000}},"timestamp":{"seconds":"1604158372","nanos":762000000},"testStepId":"392c6d0e-7e57-43ce-bcb3-ac32c5d44a28","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepStarted":{"timestamp":{"seconds":"1604158372","nanos":772000000},"testStepId":"814ae260-9c57-4ae3-a95b-4aceb7c5a851","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"64","nanos":61000000}},"timestamp":{"seconds":"1604158436","nanos":833000000},"testStepId":"814ae260-9c57-4ae3-a95b-4aceb7c5a851","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepStarted":{"timestamp":{"seconds":"1604158436","nanos":834000000},"testStepId":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"attachment":{"testStepId":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0","body":"add Test passed","mediaType":"text/x.cucumber.log+plain"}},{"attachment":{"testStepId":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0","body":"subtract Test passed","mediaType":"text/x.cucumber.log+plain"}},{"attachment":{"testStepId":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0","body":"multiply Test passed","mediaType":"text/x.cucumber.log+plain"}},{"attachment":{"testStepId":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0","body":"divide Test passed","mediaType":"text/x.cucumber.log+plain"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"104","nanos":480000000}},"timestamp":{"seconds":"1604158541","nanos":314000000},"testStepId":"6d129d6f-3b2d-449d-b7ce-14f9b71fedd2","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepStarted":{"timestamp":{"seconds":"1604158541","nanos":315000000},"testStepId":"0c53b3f8-5376-481f-94ad-71d4968903b0","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":178000000}},"timestamp":{"seconds":"1604158541","nanos":493000000},"testStepId":"0c53b3f8-5376-481f-94ad-71d4968903b0","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepStarted":{"timestamp":{"seconds":"1604158541","nanos":494000000},"testStepId":"dfc69c68-f34b-4c24-9015-2933bd0522c1","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"5","nanos":15000000}},"timestamp":{"seconds":"1604158546","nanos":509000000},"testStepId":"dfc69c68-f34b-4c24-9015-2933bd0522c1","testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"testCaseFinished":{"timestamp":{"seconds":"1604158546","nanos":509000000},"testCaseStartedId":"528b47d1-45ba-414b-a272-f220ffe00fb0"}},{"hook":{"id":"c337b7af-cb96-4485-9332-c59217ae6955","sourceReference":{"javaMethod":{"className":"glue.Shared","methodName":"method1","methodParameterTypes":["io.cucumber.java.Scenario"]}}}},{"stepDefinition":{"id":"627fdb90-d0c4-4327-adaf-7e04c2dc457b","pattern":{"source":"^launch app$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode1","methodName":"method2"}}}},{"stepDefinition":{"id":"d3e0dab1-c11d-4c0e-8702-e14780c2bc3a","pattern":{"source":"^validate operation with given data$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode1","methodName":"method3","methodParameterTypes":["io.cucumber.datatable.DataTable"]}}}},{"stepDefinition":{"id":"89a648d4-baee-48d2-8c6a-877f1322dbfc","pattern":{"source":"^close app$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode1","methodName":"method4"}}}},{"stepDefinition":{"id":"a845db0d-91af-46ac-b0c8-bcc54eb6bc91","pattern":{"source":"^validate operation with data in excel file$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode2","methodName":"method5"}}}},{"stepDefinition":{"id":"305f0413-f977-4739-b101-491387de3e4b","pattern":{"source":"^validate division using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method9","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"a61fcaab-fe96-420c-95c9-b204f598ec40","pattern":{"source":"^validate subtraction using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method7","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"feaec10c-f539-4914-a2af-3a6c315d14e8","pattern":{"source":"^validate multiply using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method8","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"eb0a3d1e-8c00-4426-83b1-7fd2efac87e2","pattern":{"source":"^validate addition using \"(.*)\" and \"(.*)\"$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"glue.Gluecode3","methodName":"method6","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"hook":{"id":"4a2436a3-af05-4e77-8c4a-0306888aa41d","sourceReference":{"javaMethod":{"className":"glue.Shared","methodName":"method2"}}}},{"testCase":{"id":"a1689e53-c33f-4492-9495-7e91dd04e1f1","pickleId":"ee783629-9d38-48d0-be87-10794e6a8f96","testSteps":[{"id":"02e3946f-2a50-446f-96ef-ca89d6a75110","hookId":"c337b7af-cb96-4485-9332-c59217ae6955"},{"id":"2339cb90-bee4-4800-a1e9-96da6212fe0f","pickleStepId":"ac4bf30b-4315-4d9a-9cf4-26fb02dde3ea","stepDefinitionIds":["627fdb90-d0c4-4327-adaf-7e04c2dc457b"],"stepMatchArgumentsLists":[{}]},{"id":"88fe6440-f62a-4019-bc31-cc0a73d20318","pickleStepId":"b6d98f3d-9ce0-4010-a95a-9744e1b3e690","stepDefinitionIds":["305f0413-f977-4739-b101-491387de3e4b"],"stepMatchArgumentsLists":[{"stepMatchArguments":[{"parameterTypeName":"anonymous","group":{"start":25,"value":"23"}},{"parameterTypeName":"anonymous","group":{"start":34,"value":"56"}}]}]},{"id":"0bacb4f7-407e-442d-9b82-c484f21500c1","pickleStepId":"680b45b4-e065-43ea-8fed-ff0857a81b15","stepDefinitionIds":["89a648d4-baee-48d2-8c6a-877f1322dbfc"],"stepMatchArgumentsLists":[{}]},{"id":"097ecedb-6205-4901-b7bd-fa828cc6bff8","hookId":"4a2436a3-af05-4e77-8c4a-0306888aa41d"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1604158546","nanos":539000000},"testCaseId":"a1689e53-c33f-4492-9495-7e91dd04e1f1","id":"2bb4f61d-dd21-4392-aa36-78af65a7cc99"}},{"testStepStarted":{"timestamp":{"seconds":"1604158546","nanos":539000000},"testStepId":"02e3946f-2a50-446f-96ef-ca89d6a75110","testCaseStartedId":"2bb4f61d-dd21-4392-aa36-78af65a7cc99"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":2000000}},"timestamp

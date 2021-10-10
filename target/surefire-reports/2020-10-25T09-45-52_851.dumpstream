@@ -1,0 +1,4 @@
+# Created at 2020-10-25T09:45:53.321
+Boot Manifest-JAR contains absolute paths in classpath 'E:\batch249\com.magnitia.calcbddtddpico\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

@@ -1,0 +1,4 @@
+# Created at 2020-01-31T12:30:04.935
+Boot Manifest-JAR contains absolute paths in classpath 'E:\batch241\com.mindq.calc\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
